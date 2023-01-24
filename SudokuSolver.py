@@ -55,7 +55,26 @@ def isValid(board, num, pos):
                 return False
     return True 
 
+def solve(board):
+    blank = findEmpty(board)
+    
+    if not blank:
+        return True
+    else:
+        row, col = blank
+    
+    for i in range(1,10):
+        if isValid(board, i, blank):
+            board[row][col] = i
+
+            if solve(board):
+                return True
+
+            board[row][col] = 0
+    
+    return False
 
 # Test
 board = setBoard()
-print(findEmpty(board))
+solve(board)
+print(board)
