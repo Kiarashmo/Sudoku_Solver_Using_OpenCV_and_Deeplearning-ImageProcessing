@@ -1,24 +1,3 @@
-# Initializing a board, empty cells are initialized with 0.
-def setBoard():
-    board = list()
-    sudokuBoard = '''200080300
-060070084
-030500209
-000105408
-000000000
-402706000
-301007040
-720040060
-004010003'''
-    rows = sudokuBoard.split('\n')
-    for row in rows:
-        column = list()
-        for character in row:
-            digit = int(character)
-            column.append(digit)
-        board.append(column)
-    return board
-
 # Find the first cell that is zero.
 def findEmpty(board):
     for i in range(len(board)):
@@ -30,7 +9,6 @@ def findEmpty(board):
 
 # Checking if the num is in the row or col or block.
 def isValid(board, num, pos):
-    
     row, col = pos
     # Checking the row:
     for i in range(len(board[0])):
@@ -74,7 +52,43 @@ def solve(board):
     
     return False
 
+def printSudoku(board):
+    for i in range(len(board)):
+        if i % 3 == 0 and i != 0:
+            print(".....................")
+
+        for j in range(len(board[0])):
+            if j % 3 == 0 and j != 0:
+                print("|", end=" ")
+
+            if j == len(board[0])-1:
+                print(board[i][j])
+            else:
+                print(str(board[i][j]) + " ", end="")
+
 # Test
+# Initializing a test board, empty cells are initialized with 0.
+
+def setBoard():
+    board = list()
+    sudokuBoard = '''200080300
+060070084
+030500209
+000105408
+000000000
+402706000
+301007040
+720040060
+004010003'''
+    rows = sudokuBoard.split('\n')
+    for row in rows:
+        column = list()
+        for character in row:
+            digit = int(character)
+            column.append(digit)
+        board.append(column)
+    return board
+
 board = setBoard()
 solve(board)
-print(board)
+printSudoku(board)
