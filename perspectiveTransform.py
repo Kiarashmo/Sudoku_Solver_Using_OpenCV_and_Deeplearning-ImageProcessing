@@ -20,7 +20,7 @@ def perspectiveTransform(img, pts):
     tl, tr, br, bl = rect
 
     widthA = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
-    widthB = np.sqrt(((tl[0] - tr[0]) ** 2) + ((tl[1] - tr[2]) ** 2))
+    widthB = np.sqrt(((tl[0] - tr[0]) ** 2) + ((tl[1] - tr[1]) ** 2))
     maxWidth = max(int(widthA), int(widthB))
 
     heightA = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
