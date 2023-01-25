@@ -68,27 +68,26 @@ def printSudoku(board):
 
 # Test
 # Initializing a test board, empty cells are initialized with 0.
+# def setBoard():
+#     board = list()
+#     sudokuBoard = '''200080300
+# 060070084
+# 030500209
+# 000105408
+# 000000000
+# 402706000
+# 301007040
+# 720040060
+# 004010003'''
+#     rows = sudokuBoard.split('\n')
+#     for row in rows:
+#         column = list()
+#         for character in row:
+#             digit = int(character)
+#             column.append(digit)
+#         board.append(column)
+#     return board
 
-def setBoard():
-    board = list()
-    sudokuBoard = '''200080300
-060070084
-030500209
-000105408
-000000000
-402706000
-301007040
-720040060
-004010003'''
-    rows = sudokuBoard.split('\n')
-    for row in rows:
-        column = list()
-        for character in row:
-            digit = int(character)
-            column.append(digit)
-        board.append(column)
-    return board
-
-board = setBoard()
-solve(board)
-printSudoku(board)
+# board = setBoard()
+# solve(board)
+# printSudoku(board)
